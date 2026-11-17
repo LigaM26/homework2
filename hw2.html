@@ -5,16 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A responsive sample page about curious cats.">
   <title>Cat Corner — Responsive Layout</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #000000;
-  background: #EAF4FF;
-  line-height: 1.5;
-}
-    img { display: block; max-width: 100%; }
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000000;
+      background: #EAF4FF;
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     .page {
       width: min(1200px, 100%);
       margin: 0 auto;
@@ -28,76 +37,140 @@
         "sidebar"
         "footer";
     }
+
     header {
       grid-area: header;
-      background: #b9d5f7;
+      background: #B7D9F8;
+      color: #000000;
       padding: 14px;
       border-radius: 8px;
       display: grid;
       gap: 10px;
-      grid-template-areas: "brand" "nav" "tools";
+      grid-template-areas:
+        "brand"
+        "nav"
+        "tools";
       align-items: center;
     }
-    .brand { grid-area: brand; font-size: 1.25rem; font-weight: 700; }
-    nav { grid-area: nav; display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .brand {
+      grid-area: brand;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    nav {
+      grid-area: nav;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     nav a, .tools a {
-      color: #17375e;
+      color: #000000;
       text-decoration: none;
-      background: #e5f0ff;
+      background: #EAF6FF;
       padding: 8px 12px;
       border-radius: 5px;
     }
-    nav a:hover, .tools a:hover { background: #fff; }
-    .tools { grid-area: tools; }
+
+    nav a:hover, .tools a:hover {
+      background: #FFFFFF;
+    }
+
+    .tools {
+      grid-area: tools;
+    }
+
     .hero {
       grid-area: hero;
       display: grid;
       gap: 12px;
-      grid-template-areas: "feature" "cta" "ad";
+      grid-template-areas:
+        "feature"
+        "cta"
+        "ad";
     }
+
     .panel {
-      background: #cfe2fb;
-      border: 1px solid #a9c9ef;
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #C9DFF5;
       border-radius: 8px;
       padding: 16px;
       min-width: 0;
     }
-    .hero-feature { grid-area: feature; }
-    .hero-cta { grid-area: cta; display: flex; flex-direction: column; justify-content: center; }
-    .hero-cta p { margin-top: 0; }
+
+    .hero-feature {
+      grid-area: feature;
+    }
+
+    .hero-cta {
+      grid-area: cta;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-cta p {
+      margin-top: 0;
+    }
+
     .button {
       display: inline-block;
       width: fit-content;
       padding: 11px 18px;
-      color: white;
-      background: #235f9e;
+      color: #000000;
+      background: #A5CFF5;
       border: 0;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 700;
+      cursor: pointer;
       transition: transform .2s ease, box-shadow .2s ease;
     }
+
     .button:hover {
-      transform: scale(1.06);
-      box-shadow: 0 7px 18px rgba(20, 55, 90, .28);
+      background: #87BCEB;
+      transform: scale(1.04);
+      box-shadow: 0 7px 18px rgba(20, 55, 90, .20);
     }
+
     .ad {
       grid-area: ad;
       overflow: hidden;
       padding: 0;
-      background: #77addd;
-      color: #102c49;
+      background: #D2E8FA;
+      color: #000000;
     }
-    .ad img { width: 100%; height: 145px; object-fit: cover; }
-    .ad-copy { padding: 12px 15px; }
-    .ad-copy p { margin: 5px 0 0; }
+
+    .ad img {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+    }
+
+    .ad-copy {
+      padding: 12px 15px;
+    }
+
+    .ad-copy p {
+      margin: 5px 0 0;
+    }
+
     .body-content {
       grid-area: body;
       display: grid;
       gap: 12px;
-      grid-template-areas: "article" "listing";
+      grid-template-areas:
+        "article"
+        "listing";
     }
-    .article-feature { grid-area: article; }
+
+    .article-feature {
+      grid-area: article;
+    }
+
     .article-feature img {
       width: 100%;
       height: 190px;
@@ -105,36 +178,89 @@
       border-radius: 6px;
       margin-bottom: 12px;
     }
-    .article-listing { grid-area: listing; }
+
+    .article-listing {
+      grid-area: listing;
+    }
+
     .story {
       display: grid;
       grid-template-columns: 92px 1fr;
       gap: 12px;
       align-items: center;
       padding: 10px 0;
-      border-bottom: 1px solid #abc9e8;
+      border-bottom: 1px solid #C9DFF5;
     }
-    .story:last-child { border-bottom: 0; }
-    .story img { width: 92px; height: 75px; object-fit: cover; border-radius: 6px; }
-    .story h3 { margin: 0 0 4px; font-size: 1rem; }
-    .story p { margin: 0; font-size: .9rem; }
+
+    .story:last-child {
+      border-bottom: 0;
+    }
+
+    .story img {
+      width: 92px;
+      height: 75px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .story h3 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+
+    .story p {
+      margin: 0;
+      font-size: .9rem;
+    }
+
+    /* Expandable feature article */
+
+    .full-feature {
+      margin-top: 12px;
+      color: #000000;
+    }
+
+    .full-feature summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .full-feature summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .full-feature p {
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
     aside {
       grid-area: sidebar;
-      background: #dceafa;
-      border: 1px solid #a9c9ef;
+      background: #FFFFFF;
+      color: #000000;
+      border: 1px solid #C9DFF5;
       border-radius: 8px;
       padding: 16px;
     }
-    aside img { width: 100%; height: 150px; object-fit: cover; border-radius: 6px; }
+
+    aside img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
     footer {
       grid-area: footer;
-      background: #9fc5f2;
+      background: #B7D9F8;
+      color: #000000;
       border-radius: 8px;
       padding: 18px;
       text-align: center;
     }
 
-    /* Small devices: tablet portrait and landscape phones (576px and up) */
+    /* Tablets and larger phones */
+
     @media (min-width: 576px) {
       .page {
         grid-template-columns: 2fr 1fr;
@@ -145,10 +271,12 @@
           "sidebar sidebar"
           "footer footer";
       }
+
       header {
         grid-template-columns: 1fr 2fr auto;
         grid-template-areas: "brand nav tools";
       }
+
       .hero {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
@@ -156,24 +284,54 @@
           "cta cta"
           "ad ad";
       }
-      .hero-feature { min-height: 125px; }
-      .hero-cta { min-height: 95px; }
-      .ad { display: grid; grid-template-columns: 40% 1fr; align-items: center; }
-      .ad img { height: 130px; }
+
+      .hero-feature {
+        min-height: 125px;
+      }
+
+      .hero-cta {
+        min-height: 95px;
+      }
+
+      .ad {
+        display: grid;
+        grid-template-columns: 40% 1fr;
+        align-items: center;
+      }
+
+      .ad img {
+        height: 130px;
+      }
+
       .body-content {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
           "article ad"
           "listing listing";
       }
-      /* The second ad is a tablet-only placement; the hero ad stays visible on phones. */
-      .body-content .ad { display: none; }
-      .article-feature img { height: 220px; }
-      aside { display: flex; gap: 18px; align-items: center; }
-      aside img { width: 38%; height: 135px; }
+
+      .body-content .ad {
+        display: none;
+      }
+
+      .article-feature img {
+        height: 220px;
+      }
+
+      aside {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+
+      aside img {
+        width: 38%;
+        height: 135px;
+      }
     }
 
-    /* Large devices: desktop (992px and up) */
+    /* Desktop screens */
+
     @media (min-width: 992px) {
       .page {
         grid-template-columns: minmax(0, 3fr) minmax(230px, 1fr);
@@ -183,118 +341,159 @@
           "body sidebar"
           "footer footer";
       }
-      header { padding: 16px 20px; }
+
+      header {
+        padding: 16px 20px;
+      }
+
       .hero {
         grid-template-columns: 2fr 1fr 1fr;
         grid-template-areas: "feature cta ad";
       }
-      .hero-feature, .hero-cta, .ad { min-height: 180px; }
-      .ad { display: block; }
-      .ad img { height: 115px; }
+
+      .hero-feature, .hero-cta, .ad {
+        min-height: 180px;
+      }
+
+      .ad {
+        display: block;
+      }
+
+      .ad img {
+        height: 115px;
+      }
+
       .body-content {
         grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
         grid-template-areas: "article listing";
       }
-      .article-feature img { height: 230px; }
-      aside { display: block; }
-      aside img { width: 100%; height: 170px; }
+
+      .article-feature img {
+        height: 230px;
+      }
+
+      aside {
+        display: block;
+      }
+
+      aside img {
+        width: 100%;
+        height: 170px;
+      }
     }
+
   </style>
 </head>
+
 <body>
   <div class="page">
+
     <header>
       <div class="brand">🐾 Cat Corner</div>
+
       <nav aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#stories">Cat stories</a>
         <a href="#tips">Care tips</a>
       </nav>
-      <div class="tools"><a href="#contact">Contact</a></div>
+
+      <div class="tools">
+        <a href="#contact">Contact</a>
+      </div>
     </header>
 
     <section class="hero" id="home" aria-label="Featured introduction">
+
       <div class="panel hero-feature">
         <h1>Life is better with cats</h1>
         <p>Meet curious companions, discover helpful care advice, and enjoy the little moments that make every day special.</p>
       </div>
+
       <div class="panel hero-cta">
         <h2>Find your purr-fect read</h2>
         <p>Explore the latest stories from our cat-loving community.</p>
         <a class="button" href="#stories">Explore stories</a>
       </div>
+
       <div class="panel ad" aria-label="Advertisement">
         <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=85" alt="A cat looking curiously at the camera">
+
         <div class="ad-copy">
           <strong>Sponsored: Cozy Cat Beds</strong>
           <p>Make nap time extra comfortable.</p>
         </div>
       </div>
+
     </section>
 
-    
-<main class="body-content" id="stories">
+    <main class="body-content" id="stories">
 
-  <article class="panel article-feature">
-    <img
-      src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=900&q=85"
-      alt="A cat enjoying the sunshine by a window">
+      <article class="panel article-feature">
 
-    <h2>Why cats love a sunny window</h2>
+        <img
+          src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=900&q=85"
+          alt="A cat enjoying the sunshine by a window">
 
-    <p>A warm patch of sunlight is more than a cozy place to nap. Windows offer cats changing sights, sounds, and smells that keep their curious minds busy.</p>
+        <h2>Why cats love a sunny window</h2>
 
-    <a class="button" href="#full-feature">Read the feature</a>
-  </article>
+        <p>A warm patch of sunlight is more than a cozy place to nap. Windows offer cats changing sights, sounds, and smells that keep their curious minds busy.</p>
 
-  <section class="panel article-listing">
-    <h2>Latest articles</h2>
+        <details class="full-feature">
+          <summary class="button">Read the feature</summary>
 
-    <div class="story">
-      <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=300&q=80" alt="A playful cat">
-      <div>
-        <h3>Five games to play at home</h3>
-        <p>Simple ways to keep your feline friend active and entertained.</p>
-      </div>
-    </div>
+          <p>Cats love sunny windows because they provide warmth, natural light, and an interesting view of the outside world.</p>
 
-    <div class="story">
-      <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=300&q=80" alt="A cat resting on a blanket">
-      <div>
-        <h3>Creating a calm sleeping spot</h3>
-        <p>Make a quiet, comfortable corner your cat will love.</p>
-      </div>
-    </div>
+          <p>Watching birds, people, and moving leaves keeps cats entertained and stimulates their natural curiosity.</p>
 
-    <div class="story" id="tips">
-      <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=300&q=80" alt="A curious kitten">
-      <div>
-        <h3>Understanding kitten curiosity</h3>
-        <p>Encourage exploration while keeping your home safe.</p>
-      </div>
-    </div>
-  </section>
+          <p>A sunny windowsill can also become a comfortable place for cats to relax, sleep, and enjoy the warmth.</p>
+        </details>
 
-</main>
-<section class="panel" id="full-feature">
-  <h2>Why cats love a sunny window</h2>
+      </article>
 
-  <p>Cats love sunny windows because they provide warmth, natural light, and an interesting view of the outside world.</p>
+      <section class="panel article-listing">
 
-  <p>Watching birds, people, and moving leaves keeps cats entertained and stimulates their natural curiosity.</p>
+        <h2>Latest articles</h2>
 
-  <p>A sunny windowsill can also become a comfortable place for cats to relax, sleep, and enjoy the warmth.</p>
-</section>
-    
+        <div class="story">
+          <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=300&q=80" alt="A playful cat">
+          <div>
+            <h3>Five games to play at home</h3>
+            <p>Simple ways to keep your feline friend active and entertained.</p>
+          </div>
+        </div>
+
+        <div class="story">
+          <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=300&q=80" alt="A cat resting on a blanket">
+          <div>
+            <h3>Creating a calm sleeping spot</h3>
+            <p>Make a quiet, comfortable corner your cat will love.</p>
+          </div>
+        </div>
+
+        <div class="story" id="tips">
+          <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=300&q=80" alt="A curious kitten">
+          <div>
+            <h3>Understanding kitten curiosity</h3>
+            <p>Encourage exploration while keeping your home safe.</p>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
     <aside>
       <h2>Cat of the week</h2>
+
       <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=700&q=85" alt="A cat wearing a tiny pair of glasses">
+
       <p>Say hello to Luna: professional nap-taker, enthusiastic bird-watcher, and expert cardboard-box inspector.</p>
     </aside>
 
     <footer id="contact">
       <strong>Cat Corner</strong> · Made with ♥ for cat people · <span>© 2026</span>
     </footer>
+
   </div>
 </body>
 </html>
